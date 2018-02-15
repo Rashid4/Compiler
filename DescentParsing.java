@@ -94,29 +94,27 @@ public class DescentParsing {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner fileScanner = new Scanner(new File("in.txt"));
-
-        while (fileScanner.hasNext()) {
-            input = fileScanner.nextLine();
-            printBorder();
-            System.out.println("Input: " + input);
-            if (input.contains(" ")) {
-                input = trim(input);
-            }
-
-            input = input + "#";
-            currentPos = 0;
-            System.out.println();
-            boolean accept = goal();
-            System.out.println();
-
-            if (accept) {
-                System.out.println("String accepted.");
-            } else {
-                System.out.println("String rejected.");
-            }
-            printBorder();
+        Scanner fileScanner = new Scanner(System.in);
+        
+        input = fileScanner.nextLine();
+        printBorder();
+        System.out.println("Input: " + input);
+        if (input.contains(" ")) {
+            input = trim(input);
         }
+
+        input = input + "#";
+        currentPos = 0;
+        System.out.println();
+        boolean accept = goal();
+        System.out.println();
+
+        if (accept) {
+            System.out.println("String accepted.");
+        } else {
+            System.out.println("String rejected.");
+        }
+        printBorder();
     }
 
     private static String trim(String word) {
