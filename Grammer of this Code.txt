@@ -1,0 +1,6 @@
+goal -> expr
+expr -> term expr2
+term -> factor term2
+expr2 -> + term expr2 | - term expr2 | null
+factor -> variable | number | (expr)
+term2 -> * factor term2 | / factor term2 | null
